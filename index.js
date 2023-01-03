@@ -6,21 +6,24 @@
 */
 
 let userName = "Brad";
-// console.log(userName);
+console.log('user name:' ,userName);
 
 let userAge; //оголошення
+console.log(typeof userAge);
 userAge = 59; //ініціалізація
+console.log(typeof userAge);
 
 //рік народження користувача
 const userYearOfBirth = 1963;
 
 // console.log(userName);
-// console.log(userAge);
+console.log('user age:', userAge);
 
 userAge = 60;
 userName = "Bradly";
 
-const userGender = "male";
+const isUserMale = true;
+// const userGender = "male";
 //userGender = 'female'; // error
 
 const AMOUNT_DAYS_WEEK = 7;
