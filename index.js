@@ -1,22 +1,20 @@
+// let number1 = '120';
+// let number2 = '102';
 
-let number = 12;
-let number2 = 10;
+// // console.log(number1 < number2); //'12'<'102' false
+// // console.log(number1 <= number2);
+// // console.log(number1 > number2);
+// // console.log(number1 >= number2);
 
-//number = number + 5; //17
-number += 5;
+// const str1 = 'кіт';
+// const str2 = 'Пес';
 
-//number = number + number2;
-number += number2;
+// console.log(str1<str2);
 
-number -= 7;
-
-number = (number + 4) * 2;
-
-number /= 3;
-
-number **= 2;
-
-
+let number1 = 50;
+const str1 = "50";
+// console.log(number1 <= Number(str1));
+// console.log(String(number1) <= str1);
 
 
-
+//console.log(true < false);
