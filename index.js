@@ -7,18 +7,13 @@ undefined
 NaN
 */
 
-//повертає першу неправду або останню правду
-const condition1 = 2 && "null" && "qwe";
-console.log(condition1);
+const number = 12;
+const numberError = 22;
+const min = 10;
+const max = 20;
+// (10 - 20) - не враховуючи межі
 
-//повертає першу правду або останню неправду
-const condition2 = 0 || false || "" || null;
-console.log(condition2);
-
-//const condition3 = false ?? "default";
-//const condition3 = 0 ?? "default";
-//const condition3 = '' ?? "default";
-//const condition3 = NaN ?? "default";
-//const condition3 = null ?? "default";
-const condition3 = undefined ?? "default";
-console.log(condition3);
+//правда, коли число входить в діапазон
+console.log(number>min && number<max);
+//правда, коли число виходоть за межі діапазону
+console.log(numberError<=min || numberError>=max);
