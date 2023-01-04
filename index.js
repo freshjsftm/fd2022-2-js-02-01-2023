@@ -7,13 +7,10 @@ undefined
 NaN
 */
 
-const number = 12;
-const numberError = 22;
-const min = 10;
-const max = 20;
-// (10 - 20) - не враховуючи межі
-
-//правда, коли число входить в діапазон
-console.log(number>min && number<max);
-//правда, коли число виходоть за межі діапазону
-console.log(numberError<=min || numberError>=max);
+const condition = 0/0; //NaN
+//якщо в круглих дужках правда, виконай блок(фігурні дужки)
+//if (condition === NaN) {
+if(Number.isNaN(condition)){  
+  //якщо в круглих дужках правда, виконай блок(фігурні дужки)
+  console.log('condition = ', condition)
+}
