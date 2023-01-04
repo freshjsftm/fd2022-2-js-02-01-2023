@@ -1,20 +1,24 @@
-// let number1 = '120';
-// let number2 = '102';
+/*
+false
+0 -0 +0
+''
+null
+undefined
+NaN
+*/
 
-// // console.log(number1 < number2); //'12'<'102' false
-// // console.log(number1 <= number2);
-// // console.log(number1 > number2);
-// // console.log(number1 >= number2);
+//повертає першу неправду або останню правду
+const condition1 = 2 && "null" && "qwe";
+console.log(condition1);
 
-// const str1 = 'кіт';
-// const str2 = 'Пес';
+//повертає першу правду або останню неправду
+const condition2 = 0 || false || "" || null;
+console.log(condition2);
 
-// console.log(str1<str2);
-
-let number1 = 50;
-const str1 = "50";
-// console.log(number1 <= Number(str1));
-// console.log(String(number1) <= str1);
-
-
-//console.log(true < false);
+//const condition3 = false ?? "default";
+//const condition3 = 0 ?? "default";
+//const condition3 = '' ?? "default";
+//const condition3 = NaN ?? "default";
+//const condition3 = null ?? "default";
+const condition3 = undefined ?? "default";
+console.log(condition3);
