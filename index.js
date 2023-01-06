@@ -1,16 +1,12 @@
-/*
-false
-0 -0 +0
-''
-null
-undefined
-NaN
-*/
+const userInput = prompt("Enter number: ", "5.56");
 
-const condition = 0/0; //NaN
-//якщо в круглих дужках правда, виконай блок(фігурні дужки)
-//if (condition === NaN) {
-if(Number.isNaN(condition)){  
-  //якщо в круглих дужках правда, виконай блок(фігурні дужки)
-  console.log('condition = ', condition)
+//вивести помилку, якщо userInput:
+//порожній рядок
+//null
+//щось, що не є числом
+
+if (userInput === "" || userInput === null || Number.isNaN(Number(userInput))) {
+  console.log("error");
+} else {
+  console.log(userInput, Number(userInput));
 }
