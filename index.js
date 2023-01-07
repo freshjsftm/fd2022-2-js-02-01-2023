@@ -1,18 +1,15 @@
-//написати функцію, яка приймає число (коректне),
-//яке є віком користувача і повертає
-//результат перевірки на повноліття
+//напишіть функцію, яка буде запитувати у користувача будь що
+//і повертати значення, якщо воно було введено
+//або повертати null, якщо користувач нічого не ввів
 
 /**
  * 
- * @param {number} age >0
- * @param {number} FULL_AGE default value = 18
- * @returns {boolean}
+ * @returns {string | null}
  */
-const isAdult = function (age, FULL_AGE = 18) {
-  return age >= FULL_AGE;
+const getUserInput = function () {
+  const input = prompt();
+  if(input){
+    return input;
+  }
+  return null;
 };
-
-const userAge = 45;
-//debugger;
-console.log(isAdult(userAge)); //true
-console.log(isAdult(17)); //false
