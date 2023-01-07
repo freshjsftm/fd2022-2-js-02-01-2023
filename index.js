@@ -1,21 +1,40 @@
-//напишіть функцію, яка приймає три числа
-//і перевіряє чи можуть бути ці числа мірами довжини
-//трьох сторін трикутника
+//напишіть функцію, яка приймає два числа
+//якщо числа парні - повертає суму
+//якщо непарні - повертає результат множення
+//якщо різні - повертає непарне
 
 /**
- * 
- * @param {number} value1 
- * @param {number} value2 
- * @param {number} value3 
- * @returns {boolean}
+ *
+ * @param {number} number1
+ * @param {number} number2
+ * @returns {number}
  */
-const isTriangleExist = function (value1, value2, value3) {
-  return (
-    value1 > 0 &&
-    value2 > 0 &&
-    value3 > 0 &&
-    value1 + value2 > value3 &&
-    value1 + value3 > value2 &&
-    value3 + value2 > value1
-  );
+const getResult = function (number1, number2) {
+  //якщо числа парні - повертає суму
+  if (number1 % 2 === 0 && number2 % 2 === 0) {
+    return number1 + number2;
+  }
+  //якщо непарні - повертає результат множення
+  if (number1 % 2 && number2 % 2) {
+    return number1 * number2;
+  }
+  //якщо різні - повертає непарне
+  if (number1 % 2) {
+    return number1;
+  }
+  return number2;
 };
+
+// const number1 = 5;
+// const number2 = 3;
+// let result;
+// //debugger
+// if (number1 % 2 === 0 && number2 % 2 === 0) {
+//   result = number1 + number2;
+// } else if (number1 % 2 && number2 % 2) {
+//   result = number1 * number2;
+// } else if (number1 % 2) {
+//   result = number1;
+// }else{
+//   result = number2;
+// }
