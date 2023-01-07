@@ -1,19 +1,18 @@
-//const side = '4';
+//написати функцію, яка приймає число (коректне),
+//яке є віком користувача і повертає
+//результат перевірки на повноліття
+
 /**
- * Get perimetr square
- * @param {number} side 
- * @returns {number} number | NaN 
+ * 
+ * @param {number} age >0
+ * @param {number} FULL_AGE default value = 18
+ * @returns {boolean}
  */
-const getPerimetrSquare = function (side = 1) { 
-  if(side<=0){
-    return NaN;
-  }
-  return side * 4;
+const isAdult = function (age, FULL_AGE = 18) {
+  return age >= FULL_AGE;
 };
-//debugger
-console.log(getPerimetrSquare()); 
-console.log(getPerimetrSquare(undefined));
-//debugger
-console.log(getPerimetrSquare(3));
-console.log(getPerimetrSquare(-3));
- 
+
+const userAge = 45;
+//debugger;
+console.log(isAdult(userAge)); //true
+console.log(isAdult(17)); //false
