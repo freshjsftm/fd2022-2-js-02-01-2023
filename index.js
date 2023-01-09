@@ -1,29 +1,24 @@
-//напишіть функцію, яка обчислює квадратне рівняння
+//condition ? true : false
 
-/**
- *
- * @param {number} a
- * @param {number} b
- * @param {number} c
- * @returns {number[] | null}
- */
-const calculateSquareEquation = function (a = 1, b = -26, c = 120) {
-  const D = b * b - 4 * a * c;
-  if (D < 0) {
-    return null;
-  }
-  if (D === 0) {
-    const x = -b / (2 * a);
-    return [x];
-  }
-  const x1 = (-b + Math.sqrt(D)) / (2 * a);
-  const x2 = (-b - Math.sqrt(D)) / (2 * a);
-  return [x1, x2];
-};
-
-const result = calculateSquareEquation();
-if (result) {
-  console.log(result)
-}else{
-  console.log('roots not found')
+function retParityWord(number = 6) {
+  return number % 2 === 0 ? "even" : "odd";
 }
+
+function isEven(number = 6) {
+  return number % 2 === 0;
+}
+
+const MAX_SUMMA = 10000;
+const MAX_SALE = 10;
+const MED_SUMMA = 5000;
+const MED_SALE = 5;
+const summa = 7345;
+
+const sale = summa > MAX_SUMMA ? MAX_SALE : summa > MED_SUMMA ? MED_SALE : 1;
+
+const result = 10 - (true ? 5 + 4 : 5 - 4); 
+
+const number1 = 5;
+const number2 = 15;
+
+const result2 = (number1>=number2) ?  number1 :  number2;
