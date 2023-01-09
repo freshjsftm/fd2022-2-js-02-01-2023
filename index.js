@@ -1,24 +1,35 @@
-//condition ? true : false
+const userInput = prompt("Choose language:\n1 - ua\n2 - en\n3 - pl\n4 - fr");
 
-function retParityWord(number = 6) {
-  return number % 2 === 0 ? "even" : "odd";
+// if (userInput === "1" || userInput === "ua") {
+//   console.log("привіт");
+// } else if (userInput === "2" || userInput === "en") {
+//   console.log("hi");
+// } else if (userInput === "3" || userInput === "pl") {
+//   console.log("czesc");
+// } else if (userInput === "4" || userInput === "fr") {
+//   console.log("hé");
+// } else {
+//   console.log("lang not found");
+// }
+
+switch (userInput) {
+  case "1":
+  case "ua":
+    console.log("привіт");
+    break;
+  case "2":
+  case "en":
+    console.log("hi");
+    break;
+  case "3":
+  case "pl":
+    console.log("czesc");
+    break;
+  case "4":
+  case "fr":
+    console.log("hé");
+    break;
+  default:
+    console.log("lang not found");
+    break;
 }
-
-function isEven(number = 6) {
-  return number % 2 === 0;
-}
-
-const MAX_SUMMA = 10000;
-const MAX_SALE = 10;
-const MED_SUMMA = 5000;
-const MED_SALE = 5;
-const summa = 7345;
-
-const sale = summa > MAX_SUMMA ? MAX_SALE : summa > MED_SUMMA ? MED_SALE : 1;
-
-const result = 10 - (true ? 5 + 4 : 5 - 4); 
-
-const number1 = 5;
-const number2 = 15;
-
-const result2 = (number1>=number2) ?  number1 :  number2;
