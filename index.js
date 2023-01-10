@@ -1,16 +1,26 @@
+let count = 0;
+// while (true) {
+//   if (count % 2 === 0) {
+//     console.log(count);
+//   }
+//   count++;
+//   if(count>20)break;
+// }
 //debugger
-let count = 1;
 while (true) {
+  if (count % 2) {
+    count++;
+    continue;
+  }
   console.log(count++);
-  if (count >= 5) break;
+  if (count > 6) break;
 }
 
-const count1 = 15;
-do {
-  console.log(123123123)
-} while (count1>20);
+for (let i = 100; i <= 600; i++) {
+  if (i % 2) continue;
+  console.log(i);
+}
 
-
-for (let i = 0; i < 5; i++) {
-  console.log(i)
+for (let i = 0; i <= 6; i+=2) {
+  console.log(i);
 }
