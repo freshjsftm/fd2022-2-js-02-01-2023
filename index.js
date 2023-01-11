@@ -1,28 +1,48 @@
-const product = {
-  name: "milk",
-  price: 55,
-  currency: "uah",
-  isAvailable: true,
-  showInfo: function () {
-    console.log(this.name,':', this.price, this.currency);
-  },
-};
-product.showInfo();
-
-function Product( name = "test", price = 0, currency = "uah", isAvailable = false) {
+function Auto(name, maxSpeed) {
   this.name = name;
-  this.price = price;
-  this.currency = currency;
-  this.isAvailable = isAvailable;
-  this.showInfo = function(){
-    return this.name+':'+this.price+this.currency;
-  }
+  this.maxSpeed = maxSpeed;
+  this.currentSpeed = 0;
+  /**
+   * 
+   * @returns {number}
+   */
+  this.stop = function () {
+    return (this.currentSpeed = 0);
+  };
+  /**
+   * 
+   * @param {number} value 
+   * @returns {number | false} 
+   */
+  this.accelerate = function (value=0) {
+    if (value < 0) {
+      return false;
+    }
+    this.currentSpeed += value;
+    if (this.currentSpeed >= this.maxSpeed) {
+      return (this.currentSpeed = this.maxSpeed);
+    }
+    return this.currentSpeed;
+  };
+  /**
+   * 
+   * @param {number} value 
+   * @returns {number | false} 
+   */
+  this.deaccelerate = function (value=0) {
+    if (value < 0) {
+      return false;
+    }
+    this.currentSpeed -= value;
+    if (this.currentSpeed <= 0) {
+      return (this.currentSpeed = 0);
+    }
+    return this.currentSpeed;
+  };
 }
-//debugger
-const product1 = new Product("milk", 55, undefined, true);
-const product2 = new Product("egg", 5.5);
-const product3 = new Product();
 
-console.log(product1);
-console.log(product2);
-console.log(product3);
+const car = new Auto("bmw", 270);
+console.log(car.accelerate(30));
+console.log(car.accelerate(350));
+console.log(car.deaccelerate(50));
+console.log(car.deaccelerate(500));
