@@ -1,12 +1,17 @@
-
-const product = {
-  name:'dress',
-  favoritColor:'teal',
-  'favorit color':'pink',
-  size:'S',
-  10:55,
+function resolveExample(str, obj) {
+  return obj[str];
 }
 
-const keyName = 'propNew';
-product[keyName] = 999;
-console.log(product[keyName]); //product['name']
+function createTableMultiple(limit = 2) {
+  const table = {};
+  for (let num1 = 2; num1 <= limit; num1++) {
+    for (let num2 = 1; num2 <= 10; num2++) {
+      table[`${num1} * ${num2} = `] = num1 * num2;
+    }
+  }
+  return table;
+}
+const multTable = createTableMultiple(10);
+
+console.log(createTableMultiple());
+console.log("5 * 6 = ", resolveExample("5 * 6 = ", multTable));
