@@ -1,25 +1,12 @@
-let n1 = 1;
-const n2 = 1;
 
-const res = n1;
-console.log(res);
-n1 = 15;
-console.log(res);
+const product = {
+  name:'dress',
+  favoritColor:'teal',
+  'favorit color':'pink',
+  size:'S',
+  10:55,
+}
 
-const obj1 = {
-  prop: 1,
-};
-
-const obj2 = {
-  prop2: 1,
-};
-
-const test = obj1;
-const newObj = test;
-console.log(test);
-obj1.prop = 15;
-// console.log(test);
-// console.log(newObj);
-newObj.newProp = 'qwerty';
-
-/******* */
+const keyName = 'propNew';
+product[keyName] = 999;
+console.log(product[keyName]); //product['name']
