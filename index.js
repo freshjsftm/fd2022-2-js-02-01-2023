@@ -1,14 +1,23 @@
+const user = {
+  firstName: "Brad",
+  lastName: "Pitt",
+  age: 59,
+  isMale: true,
+};
+const user2 = {
+  firstName: "Tom",
+  lastName: "Soyer",
+  age: 9,
+  isMale: true,
+};
 
-const str1 = `qwe
-      qwe
-queueMicrotaskqwe
-   queueMicrotaskqweeqe`;
-//alert(str1)
-console.log(str1);
+function isAdult(object, ADULT_AGE=18){
+  return object.age >= ADULT_AGE;
+}
 
-const number1 = 5;
-const number2 = 2;
-const operator = '*';
-const example = `${number1} ${operator} ${number2} = ${number1*number2}`;
+function sayHiUser(object) {
+  return `${isAdult(object)?'Hello':'Hi'}, ${object.firstName}!`;
+}
 
-console.log(example);
+console.log(sayHiUser(user));
+console.log(sayHiUser(user2));
