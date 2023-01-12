@@ -1,23 +1,25 @@
-const user = {
-  firstName: "Brad",
-  lastName: "Pitt",
-  age: 59,
-  isMale: true,
+let n1 = 1;
+const n2 = 1;
+
+const res = n1;
+console.log(res);
+n1 = 15;
+console.log(res);
+
+const obj1 = {
+  prop: 1,
 };
-const user2 = {
-  firstName: "Tom",
-  lastName: "Soyer",
-  age: 9,
-  isMale: true,
+
+const obj2 = {
+  prop2: 1,
 };
 
-function isAdult(object, ADULT_AGE=18){
-  return object.age >= ADULT_AGE;
-}
+const test = obj1;
+const newObj = test;
+console.log(test);
+obj1.prop = 15;
+// console.log(test);
+// console.log(newObj);
+newObj.newProp = 'qwerty';
 
-function sayHiUser(object) {
-  return `${isAdult(object)?'Hello':'Hi'}, ${object.firstName}!`;
-}
-
-console.log(sayHiUser(user));
-console.log(sayHiUser(user2));
+/******* */
