@@ -11,3 +11,11 @@ function MyArray() {
 }
 
 MyArray.prototype = new MyArrayPrototype();
+
+const myArrayNumbers = new MyArray();
+myArrayNumbers.push(777);
+console.log(myArrayNumbers);
+
+const arrayNumbers = [];
+arrayNumbers.push(555);
+console.log(arrayNumbers);

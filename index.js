@@ -1,13 +1,22 @@
 
-const myArrayNumbers = new MyArray();
-const myArrayNumbers2 = new MyArray();
-myArrayNumbers.push(777);
-console.log(myArrayNumbers[0]);
-console.log(myArrayNumbers);
-console.log(myArrayNumbers.push === myArrayNumbers2.push);
+const catsProto = {
+  toString() {
+    return "a cat named " + this.name;
+  },
+  sleep() {
+    return this.name + " cat sleeping";
+  },
+};
 
-const arrayNumbers = [];
-const arrayNumbers2 = new Array();
-arrayNumbers.push(555);
-console.log(arrayNumbers);
-console.log(arrayNumbers.push === arrayNumbers2.push);
+const cat1 = {
+  name: "Barsik",
+  __proto__: catsProto,
+};
+
+const cat2 = {
+  name: "Pushok",
+};
+cat2.__proto__ = catsProto;
+
+console.log(cat1);
+console.log(cat2);
