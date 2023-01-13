@@ -1,17 +1,35 @@
-function resolveExample(str, obj) {
-  return obj[str];
-}
-
-function createTableMultiple(limit = 2) {
-  const table = {};
-  for (let num1 = 2; num1 <= limit; num1++) {
-    for (let num2 = 1; num2 <= 10; num2++) {
-      table[`${num1} * ${num2} = `] = num1 * num2;
-    }
+//object with logic(functions) - 1 variant
+// const MyArrayPrototype = {};
+// MyArrayPrototype.push = function(value){
+//   this[this.length] = value;
+//   return ++this.length;
+// }
+//constructor for  - 2 variant
+function MyArrayPrototype(){
+  this.push = function(value){
+    this[this.length] = value;
+    return ++this.length;
   }
-  return table;
 }
-const multTable = createTableMultiple(10);
+//constructor with data
+function MyArray() {
+  this.length = 0;
+}
+//1 variant
+//MyArray.prototype = MyArrayPrototype;
+//2 variant
+MyArray.prototype = new MyArrayPrototype();
 
-console.log(createTableMultiple());
-console.log("5 * 6 = ", resolveExample("5 * 6 = ", multTable));
+
+const myArrayNumbers = new MyArray();
+const myArrayNumbers2 = new MyArray();
+myArrayNumbers.push(777);
+console.log(myArrayNumbers[0]);
+console.log(myArrayNumbers);
+console.log(myArrayNumbers.push === myArrayNumbers2.push);
+
+const arrayNumbers = [];
+const arrayNumbers2 = new Array();
+arrayNumbers.push(555);
+console.log(arrayNumbers);
+console.log(arrayNumbers.push === arrayNumbers2.push);
