@@ -1,25 +1,3 @@
-//object with logic(functions) - 1 variant
-// const MyArrayPrototype = {};
-// MyArrayPrototype.push = function(value){
-//   this[this.length] = value;
-//   return ++this.length;
-// }
-//constructor for  - 2 variant
-function MyArrayPrototype(){
-  this.push = function(value){
-    this[this.length] = value;
-    return ++this.length;
-  }
-}
-//constructor with data
-function MyArray() {
-  this.length = 0;
-}
-//1 variant
-//MyArray.prototype = MyArrayPrototype;
-//2 variant
-MyArray.prototype = new MyArrayPrototype();
-
 
 const myArrayNumbers = new MyArray();
 const myArrayNumbers2 = new MyArray();
