@@ -1,6 +1,5 @@
 
 function sum(){
-  //console.log("arguments = ", arguments)
   let summa = 0;
   for (let index = 0; index < arguments.length; index++) {
     summa += arguments[index];
