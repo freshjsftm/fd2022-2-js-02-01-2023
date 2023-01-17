@@ -11,45 +11,45 @@ push, pop
 unshift, shift
 splice
 reverse
+fill
+sort
 */
 
-const arr1 = [1, 2, 3, 4, 9, 6, 7];
-
-//const result1 = arr1.slice(3);
-// const result1 = arr1.findIndex(function (currentElement) {
-//   return currentElement > 4;
-// });
-const result1 = arr1.reverse();
+// const arr1 = new Array(5);
+// arr1.fill('!')
+const arr1 = new Array(5).fill(0).concat(1,2,3).reverse();
+//arr1.splice(5,0,44,55);
 console.log(arr1);
-console.log(result1);
+arr1.sort();
 
-const arr2 = [1, 2, 3, 4, 5, 6, 7];
-const result2 = arr2.splice(3);
-// console.log(arr2)
-// console.log(result2);
 
-//написати функцію, яка приймає два пареметри: мінімум і максимум діапазону
-//повертає масив, значеннями якого будуть усі числа з діапазону, включаючи мінімум і максимум
-//третій необов'яковий аргумент функції приймає шаг для визначення елементів
-//за замовчуванням шаг = 1
-/**
- *
- * @param {number} min
- * @param {number} max
- * @param {number} step default value = 1
- * @returns {[number]} [number]
- */
-function getArrayByRange(min, max, step = 1) {
-  // if (min > max) {
-  //   const buffer = min;
-  //   min = max;
-  //   max = buffer;
-  // }
-  const arr = [];
-  for (let i = min; i <= max; i += step) {
-    arr.push(i);
-  }
-  return arr;
+const users = [
+  {name:"Brad", age:59},
+  {name:"Tom", age:44},
+  {name:"Alex", age:35},
+  {name:"Rob", age:22},
+  {name:"Bob", age:16},
+]
+
+const userName = users.find(function(user){
+  return user.age <30;
+}).name;
+console.log(userName)
+
+const validateUsers = users.filter(function(user){
+  return user.age <30;
+});
+const userNames = users.map(function(user){
+  return user.name;
+})
+const validateUserNames = users.filter(checkAge).map(getName).sort();
+
+console.log(validateUserNames)
+console.log(userNames)
+
+function checkAge(currentElemnt){
+  return currentElemnt.age < 30;
 }
-console.log(getArrayByRange(3, 18, 5, false));
-console.log(getArrayByRange(33, 10, 7, false));
+function getName(currentElemnt){
+  return currentElemnt.name;
+}
