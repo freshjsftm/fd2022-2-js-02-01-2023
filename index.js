@@ -1,58 +1,55 @@
-const arr1 = [10, 20, 30, 40, 50, 60];
-const arr2 = [1, 1, 1, 5];
-const summa = arr2.reduce(function (accumulator, currentValue, index) {
-  return accumulator + (index % 2 ? currentValue : 0);
-}, 1000);
-console.log(summa);
-//const arr3 = arr1.concat(12,4,5)
-//const arr3 = arr1.slice(2, -2)
-//const key = 3;
-// console.log(arr1);
-// const arr3 = arr1.splice(2, 0, 77, 78, 79, 80);
-// console.log(arr1);
-// console.log(arr3);
-// console.log(arr1.indexOf(key, 3));
-// console.log(arr1.lastIndexOf(key));
-// console.log(arr1.includes(key));
+/*
+not modify:
+indexOf, lastIndexOf, includes
+reduce
+concat
+slice
+find, findIndex, findLast, findLastIndex
 
-//написати функцію, яка буде приймати масив та рядок
-//і повертати true, якщо рядок є в масиві
-//і false, якщо рядку в масиві не має
-//врахувати, що масив може бути порожнім!
+modify:
+push, pop
+unshift, shift
+splice
+reverse
+*/
 
+const arr1 = [1, 2, 3, 4, 9, 6, 7];
+
+//const result1 = arr1.slice(3);
+// const result1 = arr1.findIndex(function (currentElement) {
+//   return currentElement > 4;
+// });
+const result1 = arr1.reverse();
+console.log(arr1);
+console.log(result1);
+
+const arr2 = [1, 2, 3, 4, 5, 6, 7];
+const result2 = arr2.splice(3);
+// console.log(arr2)
+// console.log(result2);
+
+//написати функцію, яка приймає два пареметри: мінімум і максимум діапазону
+//повертає масив, значеннями якого будуть усі числа з діапазону, включаючи мінімум і максимум
+//третій необов'яковий аргумент функції приймає шаг для визначення елементів
+//за замовчуванням шаг = 1
 /**
  *
- * @param {[string]} arr
- * @param {string} str
- * @returns {boolean}
+ * @param {number} min
+ * @param {number} max
+ * @param {number} step default value = 1
+ * @returns {[number]} [number]
  */
-function hasElement(arr, str) {
-  return arr.includes(str);
-}
-
-//console.log(hasElement(["qwe"], "qwe"));
-
-//написати функцію, яка приймає масив з числами,
-//повертає середнє значення усіх елементів масива
-// [2,4] => 3
-//врахувати, що масив може бути порожнім - повертати null
-
-/**
- *
- * @param {[number]} arr
- * @returns {number | null}
- */
-function getAverage(arr) {
-  if (arr.length === 0) {
-    return null;
-  }
-  // let summa = 0;
-  // for (let i = 0; i < arr.length; i++) {
-  //   summa = summa + arr[i];
+function getArrayByRange(min, max, step = 1) {
+  // if (min > max) {
+  //   const buffer = min;
+  //   min = max;
+  //   max = buffer;
   // }
-  const summa = arr.reduce(function (resAccum, elem) {
-    return resAccum + elem;
-  });
-  return summa / arr.length;
+  const arr = [];
+  for (let i = min; i <= max; i += step) {
+    arr.push(i);
+  }
+  return arr;
 }
-
+console.log(getArrayByRange(3, 18, 5, false));
+console.log(getArrayByRange(33, 10, 7, false));
