@@ -32,6 +32,22 @@ function MyArrayPrototype() {
       func(this[index], index, this);
     }
   };
+  this.some = function (func) {
+    for (let index = 0; index < this.length; index++) {
+      if (func(this[index], index, this)) {
+        return true;
+      }
+    }
+    return false;
+  };
+  this.every = function (func) {
+    for (let index = 0; index < this.length; index++) {
+      if (func(this[index], index, this) === false) {
+        return false;
+      }
+    }
+    return true;
+  };
 }
 //constructor with data
 function MyArray() {
@@ -44,7 +60,12 @@ function MyArray() {
 MyArray.prototype = new MyArrayPrototype();
 // MyArray.prototype.newMethod = superMethod;
 
-const myArrayNumbers = new MyArray(8, 7, 6);
+const myArrayNumbers = new MyArray(7, 11, 11, 7);
+console.log(
+  myArrayNumbers.every(function (elem) {
+    return elem > 5;
+  })
+);
 // myArrayNumbers.push(777, 4, 5, 7, 8);
 // const newMyArrayReverse = myArrayNumbers.reverse();
 console.log(myArrayNumbers);
