@@ -60,7 +60,8 @@ function MyArray() {
 MyArray.prototype = new MyArrayPrototype();
 // MyArray.prototype.newMethod = superMethod;
 
-const myArrayNumbers = new MyArray(7, 11, 11, 7);
+const myArrayNumbers = new MyArray(7, 1, 11, 7);
+//debugger
 console.log(
   myArrayNumbers.every(function (elem) {
     return elem > 5;
@@ -80,3 +81,7 @@ console.log(myArrayNumbers);
 // Array.prototype.newMethod = superMethod;
 
 // function superMethod(){console.log('new method!!!')}
+
+
+
+
