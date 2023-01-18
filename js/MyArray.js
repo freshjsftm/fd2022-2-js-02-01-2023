@@ -27,6 +27,11 @@ function MyArrayPrototype() {
     //повернути новий екземпляр нашого масиву
     return newMyArray;
   };
+  this.forEach = function (func) {
+    for (let index = 0; index < this.length; index++) {
+      func(this[index], index, this);
+    }
+  };
 }
 //constructor with data
 function MyArray() {
@@ -41,9 +46,12 @@ MyArray.prototype = new MyArrayPrototype();
 
 const myArrayNumbers = new MyArray(8, 7, 6);
 // myArrayNumbers.push(777, 4, 5, 7, 8);
-const newMyArrayReverse = myArrayNumbers.reverse();
+// const newMyArrayReverse = myArrayNumbers.reverse();
 console.log(myArrayNumbers);
-console.log(newMyArrayReverse);
+// console.log(newMyArrayReverse);
+// myArrayNumbers.forEach(function(elem){
+//   console.log(elem)
+// })
 
 // const arrayNumbers = new Array(3, 5, 7);
 // arrayNumbers.push(45);
