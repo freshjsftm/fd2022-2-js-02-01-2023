@@ -1,17 +1,20 @@
 "use strict";
 
-// const sum = (number1, number2) => {
-//   return number1 + number2;
-// };
+//const sum = new Function('a', 'b', 'return a + b');
 
-const sum = (number1, number2) => number1 + number2;
+const f1 = function(num, ...rest){
+  console.log('num',num)
+  console.log('f1',rest)
+}
+const f2 = (...args)=>{
+  console.log('f2',args)
+}
 
-const square = (n) => n * n;
+// console.dir(f1)
+// console.dir(f2)
 
-const logHi = () => {
-  console.log("hi");
-  return 12;
-};
+f1(1,2,3);
+f2(1,2,3);
 
-console.log(sum(4, 3));
-console.log(logHi());
+//напишіть функцію стрілку, яка приймає безліч аргументів і повертає сумму
+//напишіть функцію стрілку, яка приймає безліч аргументів і повертає середнє значення
