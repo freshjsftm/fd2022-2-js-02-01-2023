@@ -1,50 +1,17 @@
-'use strict';
-//1 - arrow
-const site = {
-  title: 'my site',
-  headers:['Header1', 'About', 'Contact', 'Section title'],
-  showHeaders(){
-    this.headers.forEach((header)=>{
-      console.log(this.title, '|', header)
-    })
-  }
-}
-site.showHeaders();
+"use strict";
 
-//2 - this in variable
-// const site = {
-//   title: 'my site',
-//   headers:['Header1', 'About', 'Contact', 'Section title'],
-//   showHeaders(){
-//     const self = this;
-//     this.headers.forEach(function(header){
-//       console.log(self.title, '|', header)
-//     })
-//   }
-// }
-
-//thisArgs in methods array
-// const site = {
-//   title: "my site",
-//   headers: ["Header1", "About", "Contact", "Section title"],
-//   showHeaders() {
-//     this.headers.forEach(logHeader, this);
-//   },
-// };
-// function logHeader(header) {
-//   console.log(this.title, "|", header);
-// }
-
-// const site = {
-//   title: "my site",
-//   headers: ["Header1", "About", "Contact", "Section title"],
-//   showHeaders() {
-//     this.headers.forEach(logHeader.bind(this));
-//   },
+// const sum = (number1, number2) => {
+//   return number1 + number2;
 // };
 
-// site.showHeaders();
+const sum = (number1, number2) => number1 + number2;
 
-// function logHeader(header){
-//   console.log(this.title, '|', header)
-// }
+const square = (n) => n * n;
+
+const logHi = () => {
+  console.log("hi");
+  return 12;
+};
+
+console.log(sum(4, 3));
+console.log(logHi());
