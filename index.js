@@ -1,21 +1,22 @@
 "use strict";
-/**
- * 
- * @param  {...number} args = [number]
- * @returns 
- */
-const getSummaArgs = (...args) => { //rest
-  console.log(args)
-  return args.length === 0 ? null : args.reduce((acc, arg) => acc + arg, 100);
-};
 
-const getAverageArgs = (...args) =>
-  args.length === 0 ? null : args.reduce((acc, arg) => acc + arg) / args.length;
+//написати фукцію стрілку, яка приймає джерельний масив 
+//і повертає масив з двох значень, 
+//які є мінімальним і максимальним значенням джерельного масиву
+//якщо джерельний масив порожній, то функція повертає порожній масив
 
-const numbers = [1, 2, 3, 4, 5, 6];
-console.log(getSummaArgs(...numbers,2,5)); //spred
-console.log(getSummaArgs(2,3));
 
-const arr = [9,9,9];
 
-const resultArray = [77, ...numbers, 88, ...arr];//spred
+//написати функцію стрілку, яка приймає безліч аргументів
+//і повертає результат їх множення, якщо аргументів не має - повертає null
+
+
+
+//переписати функцію, що нижче на функцію стрілку
+function askUser(quetion){
+  const userInput = confirm(quetion);
+  if(userInput){
+    return 'ok';
+  }
+  return 'error';
+}
