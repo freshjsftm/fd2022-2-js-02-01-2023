@@ -1,37 +1,51 @@
 "use strict";
-
-// function recursion(num) {
-//   if (num === 0) {
-//     return;
-//   }
-//   console.log(num);
-//   recursion(num - 1);
-// }
-
-// //11226
-// //debugger
-// recursion(40000);
-
-//2**5 -> 2 * (2**4)
-//2**4 -> 2 * (2**3)
-//2**3 -> 2 * (2**2)
-//2**2 -> 2 * (2**1)
-//2**1 -> 2 * (2**0)
-//2**0 -> 1
+/**
+ *
+ * @param {number} num  = [0..10000]
+ * @returns
+ */
+function recursion(num) {
+  if (typeof num !== "number") {
+    throw new TypeError("num must be number");
+  }
+  if (num > 10000 || num < 0) {
+    throw new RangeError("num must be 0..10000");
+  }
+  if (num === 0) {
+    return;
+  }
+  console.log(num);
+  recursion(num - 1);
+}
 
 const power = (base, exp) => {
-  if(exp === 0) {
+  if (typeof base !== "number" || typeof exp !== "number") {
+    throw new TypeError("type be number");
+  }
+  if (exp < 0 || exp > 10000) {
+    throw new RangeError("exp must be positive");
+  }
+  if (exp === 0) {
     return 1;
   }
-  return base * power(base, exp-1);
-}
-//debugger
-console.log(power(2,3));
+  return base * power(base, exp - 1);
+};
 
-//написати рекурсивну функцію для обчислення 
-// 5! = 5 * 4!
-// 4! = 4 * 3!
-// 3! = 3 * 2!
-// 2! = 2 * 1!
-// 1! = 1 * 0!
-// 0! = 1
+//11226
+//debugger
+
+try {
+  console.log("try");
+  recursion("-50");
+  recursion(5);
+  console.log("try end");
+} catch (error) {
+  console.log("catch");
+  console.log(error);
+} finally {
+  console.log("finally");
+}
+
+console.log("information");
+
+//застосуйте try/catch  для факторіалу
