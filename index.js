@@ -1,17 +1,17 @@
 "use strict";
 
-const number = new Number(0);
+const userName = "        brad        ";
+// console.log(userName.toUpperCase())
+const userNameUpper = userName.trim().toUpperCase().repeat(3);
+console.log(userNameUpper);
 
-if(number){
-  console.log(number)
+const arr = [1, 2, 3, 4, 5];
+const strArr = arr.join('-');
+console.log(strArr);
+
+const p = 'The quick brown fox jumps over the lazy dog.';
+if(p.includes('.')){
+  const posDote = p.indexOf('.');
+  const pArr = p.substring(0,posDote).split(' ');
+  console.log(pArr);
 }
-console.log(number.toExponential());
-
-console.log((12345.12345).toPrecision(7));
-console.log((12345.12345).toFixed(7));
-
-const num = 789.789456;
-console.log(num);
-new Number(num);
-console.log(num.toPrecision(7));
-console.log(num.toFixed(2));
