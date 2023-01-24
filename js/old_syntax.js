@@ -1,14 +1,14 @@
 'use strict';
-function User(firstName, lastName, age){
+function UserOld(firstName, lastName, age){
   this.firstName = firstName;
   this.lastName = lastName;
   this.age = age;
-  User.amount++;
+  UserOld.amount++;
 }
 //static
-User.amount = 0;
-User.createTestUser = function(){
-  return new User('Test', 'Testtest', 18);
+UserOld.amount = 0;
+UserOld.createTestUser = function(){
+  return new UserOld('Test', 'Testtest', 18);
 }
 function UserProto(){
   this.getFullName = function(){
@@ -18,6 +18,6 @@ function UserProto(){
     return this.firstName;
   }
 }
-User.prototype = new UserProto();
+UserOld.prototype = new UserProto();
 
 
