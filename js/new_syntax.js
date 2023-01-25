@@ -78,27 +78,27 @@ class User {
   }
 }
 
-try {
-  const testUser = User.createTestUser();
-  console.log(testUser)
-  console.log(User.isUser({qwe:12}))
-  console.log(User.isUser(testUser))
-} catch (error) {
+// try {
+//   const testUser = User.createTestUser();
+//   console.log(testUser)
+//   console.log(User.isUser({qwe:12}))
+//   console.log(User.isUser(testUser))
+// } catch (error) {
   
-}
+// }
 
 
-try {
-  const user3 = new User("Tim", "Qwerrty", 23);
-  user3.fullName = "Fred Trim"; //setter
-  console.log(user3.fullName);
-  console.log(user3.firstName); //getter
-  console.log(user3);
-} catch (error) {
-  console.log(error);
-}
+// try {
+//   const user3 = new User("Tim", "Qwerrty", 23);
+//   user3.fullName = "Fred Trim"; //setter
+//   console.log(user3.fullName);
+//   console.log(user3.firstName); //getter
+//   console.log(user3);
+// } catch (error) {
+//   console.log(error);
+// }
 
-console.log("important info!");
+// console.log("important info!");
 
 //написати клас Worker
 //у якого будуть данні: приізвище, ставка за день,
