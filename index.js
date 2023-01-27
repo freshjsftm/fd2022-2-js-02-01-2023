@@ -5,97 +5,39 @@
   поліморфізм
 */
 
-class User {
-  constructor(name, age) {
-    this.name = name;
-    this.age = age;
+class Link {
+  #color;
+  constructor(text, href) {
+    this.text = text;
+    this.href = href;
+    this.#color = "red";
   }
-  set name(value) {
-    if (typeof value !== "string") {
-      throw new TypeError("name must be string!");
-    }
-    if (value.length === 0) {
-      throw new RangeError("not empty");
-    }
-    this._name = value;
-  }
-  get name() {
-    return this._name;
-  }
-  set age(value) {
-    if (typeof value !== "number") {
-      throw new TypeError("age must be number!");
-    }
-    if (value < 14 || value > 100) {
-      throw new RangeError("14...100");
-    }
-    this._age = value;
-  }
-  get age() {
-    return this._age;
-  }
-  //methods
-  buy() {
-    return this.name + " is buy";
-  }
-  static isUser(obj) {
-    return obj instanceof User;
+  logLink(color) {
+    return `<a href="${this.href}">${this.text} ${this.#color}</a>`;
   }
 }
 
-class UserRegistred extends User {
-  constructor(name, age, email) {
-    super(name, age);
-    this.email = email;
-    this._isRegister = true;
+class LinkPicture extends Link {
+  constructor(href, pic) {
+    super("", href);
+    this.pic = pic;
   }
-  set email(value) {
-    if (typeof value !== "string") {
-      throw new TypeError("email must be string!");
-    }
-    if (value.length === 0) {
-      throw new RangeError("not empty");
-    }
-    this._email = value;
-  }
-  get email() {
-    return this._email;
-  }
-  logWishList(...rest) {
-    rest.forEach((item) => console.log(item));
+  logLink(value) {
+    return super.logLink(123) + `<a href="${this.href}"><img src="${this.pic}"></a>`;
   }
 }
 
-class Seller extends User{}
-
-class Admin extends UserRegistred {
-  constructor(name, age, email) {
-    super(name, age, email);
-  }
-  addRegister(obj) {
-    if (obj instanceof UserRegistred) {
-      return (obj._isRegister = true);
-    }
-    throw new TypeError("must be UserRegistred");
-  }
-  removeRegister(obj) {
-    if (obj instanceof UserRegistred) {
-      return (obj._isRegister = false);
-    }
-    throw new TypeError("must be UserRegistred");
+class LinkNewTab extends Link {
+  constructor(text, href) {
+    super(text, href);
+    this.target = "_blank";
   }
 }
 
-try {
-  const user = new UserRegistred("Miha", 34, "qwe@qwe.qwe");
-  console.log(user);
-  console.log(user.buy());
-  user.logWishList(1, 2, 3, 4);
-  const simpleUser = new User("Simple", 44);
-  // console.log(simpleUser.logWishList(1, 2, 3, 4)); - не працює!!!
-  const admin = new Admin("Admin", 33, "admin@qwe.qwe");
-  admin.removeRegister(user);
-  console.log(admin);
-} catch (error) {
-  console.log(error);
-}
+const linkPic = new LinkPicture("http://", "logo.png");
+console.log(linkPic.logLink("blue"));
+//console.log(linkPic);
+
+const link = new Link("qwerty", "./index.html");
+console.log(link.logLink("blue"));
+//console.log(link);
