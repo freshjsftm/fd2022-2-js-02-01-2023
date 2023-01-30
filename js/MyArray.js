@@ -63,21 +63,57 @@ class MyArray {
     }
     return true;
   }
-
+  concat(instanceMyArray) {
+    if (MyArray.isMyArray(instanceMyArray) === false) {
+      throw new TypeError("must be instance MyArray");
+    }
+    const concatArray = new MyArray();
+    for (let i = 0; i < this.length; i++) {
+      concatArray.push(this[i]);
+    }
+    for (let i = 0; i < instanceMyArray.length; i++) {
+      concatArray.push(instanceMyArray[i]);
+    }
+    return concatArray;
+  }
+  flat(depth = 1) {
+    let result = new MyArray();
+    this.forEach((elem) => {
+      if (MyArray.isMyArray(elem) && depth) {
+        result = result.concat(elem.flat(depth - 1));
+      } else if (elem !== undefined) {
+        result.push(elem);
+      }
+    });
+    return result;
+  }
   [Symbol.iterator]() {
     return new MyArrayIterator(this);
   }
-
   static isMyArray(obj) {
     return obj instanceof MyArray;
   }
 }
 
-const myArr = new MyArray(10, 20, 30, 40);
-const iterator2 = myArr[Symbol.iterator]().next();
-
-console.log(...myArr);
-
-for (const elem of myArr) {
-  console.log(elem);
-}
+const myArr = new MyArray(
+  10,
+  undefined,
+  new MyArray(
+    5,
+    new MyArray(
+      55,
+      undefined,
+      77,
+      undefined,
+      88,
+      new MyArray(555, undefined, 757, 858)
+    ),
+    8
+  ),
+  30,
+  undefined,
+  40
+);
+const newMyFlatArr = myArr.flat(2);
+console.log(myArr);
+console.log(newMyFlatArr);

@@ -1,16 +1,6 @@
 "use strict";
 
-const arr = [1, 5, 9];
-
-const iterator = arr[Symbol.iterator]()
-console.log(iterator);
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
-console.log(iterator.next());
-
-for (const elem of arr) {
-  console.log(elem);
-}
-
-console.log(...arr);
+const arr = [1,1,[2,2,2,[3,3,3,[4,4,4,4,[5,5,5,5]]]]];
+// console.log(arr);
+// console.log(arr.flat(Infinity))
+// console.log(arr);
