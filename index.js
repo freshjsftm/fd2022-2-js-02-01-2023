@@ -1,29 +1,16 @@
 "use strict";
 
-/*
-number bigInt NaN
-string
-boolean
-null
-undefined
-Symbol
+const arr = [1, 5, 9];
 
-object
+const iterator = arr[Symbol.iterator]()
+console.log(iterator);
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
+console.log(iterator.next());
 
-*/
-
-
-const mySymbol = Symbol('label for developer');
-const mySymbol2 = Symbol('important symbol');
-//console.log(mySymbol);
-const propKey = 'propName';
-const object = {
-  name: "Brad",
-  123: 123123123,
-  [mySymbol]: 'symbol',
-  [mySymbol2]: 'symbol 2',
-  [propKey] : 777
+for (const elem of arr) {
+  console.log(elem);
 }
 
-export default object;
-
+console.log(...arr);
