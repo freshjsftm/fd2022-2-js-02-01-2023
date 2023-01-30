@@ -21,16 +21,13 @@ class MyArray {
     return lastItem;
   };
   reverse() {
-    //створити новий екземпляр нашого масиву
     const newMyArray = new MyArray();
-    //запушити в нього елементи з поточного масиву у зворотньому порядку
     for (let index = this.length - 1; index >= 0; index--) {
       newMyArray.push(this[index]);
     }
     for (let index = 0; index < this.length; index++) {
       this[index] = newMyArray[index];
     }
-    //повернути новий екземпляр нашого масиву
     return newMyArray;
   };
   forEach(func) {
