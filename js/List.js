@@ -52,6 +52,6 @@ class List{
 
 const list = new List(4,'asd', [1, 2], {prop:45}, 'qwerty', false);
 //console.log(...list)
-for (const item of list) {
-  console.log(item)
-}
+// for (const item of list) {
+//   console.log(item)
+// }
