@@ -21,13 +21,6 @@ dictionary.set("and", "і");
 const sentence = "In early morning very sad Dog and funny Cat go at forest with rat";
 
 const translate = (str) => {
-  //обрізаємо пробіли
-  //переводимо в нижній регистр
-  //розбиваємо на окремі слова - масив слів
-  //кожне слово - ключ в мапі за яким повертаємо значення
-  //dictionary.get(key)
-  //отримуємо масив значень - перекладених слів
-  //з масив значень робимо рядок
   return str
     .trim()
     .toLowerCase()
@@ -35,5 +28,17 @@ const translate = (str) => {
     .map((word) => dictionary.has(word) ? dictionary.get(word) : word )
     .join(" ");
 };
+//console.log(translate(sentence))
 
-console.log(translate(sentence))
+//const keysIterator = dictionary.keys();
+// for (const iterator of dictionary.keys()) {
+//   console.log(iterator)
+// }
+
+console.log(...dictionary.keys())
+console.log(...dictionary.values())
+for (const [key, value] of dictionary.entries()) {
+  console.log(key, value)
+}
+
+const arrKeys = [...dictionary.keys()]
