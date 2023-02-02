@@ -1,19 +1,39 @@
 "use strict";
 
-const obj={
-  prop:12,
-  1:12,
-}
-const arr = []
-const f = ()=>{}
+const dictionary = new Map();
+dictionary.set("dog", "пес");
+dictionary.set("cat", "кіт");
+dictionary.set("forest", "ліс");
+dictionary.set("rat", "щур");
+dictionary.set("field", "поле");
+dictionary.set("funny", "веселий");
+dictionary.set("sad", "сумний");
+dictionary.set("happy", "щасливий");
+dictionary.set("in", "у");
+dictionary.set("at", "в");
+dictionary.set("morning", "ранок");
+dictionary.set("go", "ідти");
+dictionary.set("jump", "стрибати");
+dictionary.set("walk", "гуляти");
+dictionary.set("talk", "розмовляти");
+dictionary.set("and", "і");
 
-const map1 = new Map();
-map1.set(true, 'true');
-map1.set(obj, 'obj');
-map1.set(arr, 'arr');
-map1.set(1, 10000);
-map1.set(f, 'func');
-console.log(map1);
-console.log(map1.get(1));
-map1.delete(1)
-console.log(map1.has(1));
+const sentence = "In early morning very sad Dog and funny Cat go at forest with rat";
+
+const translate = (str) => {
+  //обрізаємо пробіли
+  //переводимо в нижній регистр
+  //розбиваємо на окремі слова - масив слів
+  //кожне слово - ключ в мапі за яким повертаємо значення
+  //dictionary.get(key)
+  //отримуємо масив значень - перекладених слів
+  //з масив значень робимо рядок
+  return str
+    .trim()
+    .toLowerCase()
+    .split(" ")
+    .map((word) => dictionary.has(word) ? dictionary.get(word) : word )
+    .join(" ");
+};
+
+console.log(translate(sentence))
