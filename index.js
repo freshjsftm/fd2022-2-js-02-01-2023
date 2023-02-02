@@ -1,60 +1,57 @@
 "use strict";
-
-const dictionary = new Map();
-dictionary.set("dog", "пес");
-dictionary.set("cat", "кіт");
-dictionary.set("forest", "ліс");
-dictionary.set("rat", "щур");
-dictionary.set("field", "поле");
-dictionary.set("funny", "веселий");
-dictionary.set("sad", "сумний");
-dictionary.set("happy", "щасливий");
-dictionary.set("in", "у");
-dictionary.set("at", "в");
-dictionary.set("morning", "ранок");
-dictionary.set("go", "ідти");
-dictionary.set("jump", "стрибати");
-dictionary.set("walk", "гуляти");
-dictionary.set("talk", "розмовляти");
-dictionary.set("and", "і");
-
-const sentence = "In early morning very sad Dog and funny Cat go at forest with rat";
-
-const translate = (str) => {
-  return str
-    .trim()
-    .toLowerCase()
-    .split(" ")
-    .map((word) => dictionary.has(word) ? dictionary.get(word) : word )
-    .join(" ");
+const user = {
+  personalInfo: {
+    id: 12,
+    firstName: "Tom",
+    lastName: "Qwerrty",
+    bday: {
+      day: 28,
+      month: 6,
+      year: 1987,
+    },
+    gender: "male",
+  },
+  contactInfo: {
+    phone: "123-56-89",
+    email: "qwe@gmail.com",
+    address: {
+      town: "NY",
+      street: "Avenu 25",
+      house: 2546,
+    },
+  },
+  profession: "programmer",
 };
-//console.log(translate(sentence))
 
-//const keysIterator = dictionary.keys();
-// for (const iterator of dictionary.keys()) {
-//   console.log(iterator)
-// }
+const {
+  profession: userProf,
+  contactInfo: { email: userEmail },
+  personalInfo: {
+    lastName: userLastName,
+    bday: { year: userYearBorn },
+  },
+} = user;
+// console.log(userProf);
+// console.log(userEmail);
+// console.log(userYearBorn);
+// console.log(userLastName);
 
-// console.log(...dictionary.keys())
-// console.log(...dictionary.values())
-// for (const [key, value] of dictionary.entries()) {
-//   console.log(key, value)
-// }
+//дістаньте пол в змінну userGender
+//телефон (userTel) і номер будинку(houseNumber)
+//і пошту
 
-const arrKeys = [...dictionary.keys()]
-const obj = {1:1}
-const arr = [1,1,1,1,1,4];
-const set1 = new Set(arr);
-// set1.add(1)
-// set1.add(1)
-// set1.add(1)
-// set1.add('1')
-// set1.add(arrKeys)
-// set1.add(arrKeys)
-// set1.add([1])
-// set1.add(obj)
-// set1.add(obj)
-// set1.add(obj)
-console.log(set1)
+const logFullName = ({ personalInfo: { firstName, lastName }, ...restObject }, ...rest) => {
+  console.log(firstName, lastName);
+  console.log(restObject);
+  console.log(rest);
+};
+logFullName(user, 1,2,3,5,7);
 
-const arrUnique = [...new Set(arr).values()];
+const {contactInfo:{email}, ...rest} = user;
+console.log(rest);
+
+
+const colors = ['red', 'teal', 'blue', 'aqua'];
+
+const [firstColor, , ,aqua] = colors;
+const [one, ...restColors] = colors;
