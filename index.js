@@ -35,10 +35,26 @@ const translate = (str) => {
 //   console.log(iterator)
 // }
 
-console.log(...dictionary.keys())
-console.log(...dictionary.values())
-for (const [key, value] of dictionary.entries()) {
-  console.log(key, value)
-}
+// console.log(...dictionary.keys())
+// console.log(...dictionary.values())
+// for (const [key, value] of dictionary.entries()) {
+//   console.log(key, value)
+// }
 
 const arrKeys = [...dictionary.keys()]
+const obj = {1:1}
+const arr = [1,1,1,1,1,4];
+const set1 = new Set(arr);
+// set1.add(1)
+// set1.add(1)
+// set1.add(1)
+// set1.add('1')
+// set1.add(arrKeys)
+// set1.add(arrKeys)
+// set1.add([1])
+// set1.add(obj)
+// set1.add(obj)
+// set1.add(obj)
+console.log(set1)
+
+const arrUnique = [...new Set(arr).values()];
